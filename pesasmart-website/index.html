@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PesaSmart</title>
+<meta name="description" content="PesaSmart reads your M-PESA and bank messages on your phone and turns them into a clear picture of your money. Offline first, private by design.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.hero .wrap{display:grid;gap:clamp(28px,4vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center}
+.lead{font-size:19px;color:var(--ink2)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.pic{background:var(--hero);border-radius:32px;padding:clamp(20px,3vw,36px);display:grid;gap:16px;color:#fff;position:relative;overflow:hidden}
+.pic::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+.sms{background:#fff;color:#2B1D14;border-radius:20px 20px 20px 6px;padding:14px 16px;font-size:14.5px;line-height:1.5;max-width:340px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.sms b{display:block;font-size:12.5px;color:#6E5D50;margin-bottom:4px}
+.flow{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:#FFE3D6;padding-left:6px}
+.flow svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2}
+.txn{background:var(--card);color:var(--ink);border-radius:20px;padding:16px 18px;box-shadow:0 14px 30px rgba(0,0,0,.2);justify-self:end;width:min(100%,360px);position:relative;z-index:1}
+.txn .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.txn .amt{font-weight:800;font-size:22px;color:var(--neg);white-space:nowrap}
+.pill{display:inline-block;padding:3px 12px;border-radius:12px;background:var(--soft);color:var(--brand2);font-size:13px;font-weight:700;margin:8px 6px 0 0}
+.note{font-style:italic;font-size:14px;color:var(--ink2);margin-top:8px}
+.small{font-size:13px;color:#FFE3D6;position:relative;z-index:1}
+.steps{counter-reset:s;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.bg-list{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));padding:0;margin:0;list-style:none}
+.bg-list li{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.bg-list svg{flex:none;width:24px;height:24px;stroke:var(--brand2);fill:none;stroke-width:2}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:4px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;min-height:44px}
+details p{color:var(--ink2)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="index.html"><i aria-hidden="true">P</i>PesaSmart</a>
+  <nav aria-label="Main">
+    <a href="#how">How it works</a><a href="#background">In the background</a><a href="#features">Features</a><a href="#faq">Questions</a><a href="privacy.html">Privacy</a>
+  </nav>
+</div></header>
+
+<main>
+<section class="band hero"><div class="wrap">
+  <div>
+    <h1>Your M-PESA messages, turned into a clear picture of your money.</h1>
+    <p class="lead">PesaSmart reads the money messages already on your phone, from M-PESA, your banks, saccos and lenders, and sorts them into what came in, what went out, what you owe and what each occasion cost. It works offline, and your data stays on your phone.</p>
+    <div class="cta">
+      <a class="btn" href="#get">Get PesaSmart</a>
+      <a class="btn ghost" href="privacy.html">Read the privacy policy</a>
+    </div>
+  </div>
+  <div class="pic" role="img" aria-label="An M-PESA message turned into a sorted transaction with a category and a note">
+    <div class="sms"><b>MPESA</b>XX12AB34CD Confirmed. Ksh1,250.00 paid to NAIVAS SUPERMARKET. on 14/11/26 at 6:42 PM. New M-PESA balance is Ksh8,410.50. Transaction cost, Ksh0.00.</div>
+    <div class="flow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v14M6 12l6 6 6-6"/></svg>Read on your phone, sorted in a second</div>
+    <div class="txn">
+      <div class="row"><strong>Naivas Supermarket</strong><span class="amt">−1,250</span></div>
+      <div class="muted" style="font-size:14px">14 Nov · 6:42 PM · M-PESA</div>
+      <span class="pill">Food › Groceries</span><span class="pill">No fee</span>
+      <div class="note">“Weekly shopping”</div>
+    </div>
+    <div class="small">Sample message for illustration.</div>
+  </div>
+</div></section>
+
+<section class="band" id="how"><div class="wrap">
+  <h2>How it works</h2>
+  <p class="muted">No typing in receipts. No bank logins. PesaSmart starts from the messages you already get.</p>
+  <div class="steps">
+    <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg><h3>It reads your money messages</h3><p class="muted">M-PESA, banks, saccos, lenders and Ziidi. It uses only money messages; other messages are skipped.</p></div>
+    <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/></svg><h3>It sorts them for you</h3><p class="muted">Each payment gets a category, its fee is recorded separately, and duplicates are removed.</p></div>
+    <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9M12 7v5l3 2"/></svg><h3>It asks when it isn't sure</h3><p class="muted">Money from a person or a bank could be income, a loan, a gift or your own money. PesaSmart puts it in “Please confirm” instead of guessing.</p></div>
+    <div class="card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-7"/></svg><h3>It shows the true picture</h3><p class="muted">Real income and spending, with loans and transfers between your own accounts kept out, so the numbers mean what they say.</p></div>
+  </div>
+</div></section>
+
+<section class="band terra" id="background"><div class="wrap">
+  <h2>What PesaSmart does in the background</h2>
+  <p>So you open the app to figures that are already up to date. All of this happens on your phone.</p>
+  <div class="grid">
+    <div class="card"><h3>Reads new messages as they arrive</h3><p>A new M-PESA or bank message is read and filed within seconds, with or without internet.</p></div>
+    <div class="card"><h3>Catches up on missed messages</h3><p>If the phone was off or the app was closed, it goes through the inbox and picks up anything it missed, without creating duplicates.</p></div>
+    <div class="card"><h3>Pairs and matches</h3><p>It links transfers between your own accounts, matches repayments to the loans they pay off, and joins a bank message with the matching M-PESA message.</p></div>
+    <div class="card"><h3>Checks for gaps</h3><p>It compares the balance in each message with the one before. If money moved without a message, it tells you a message may be missing.</p></div>
+    <div class="card"><h3>Keeps totals current</h3><p>Balances, budgets, loan balances, events and investments are recalculated with one set of rules, so every screen and report agrees.</p></div>
+    <div class="card"><h3>Bank emails, when you turn it on <span class="tag" style="background:#fff;color:#9C3A18">Coming</span></h3><p>With Gmail connected, it checks for new bank emails when you're online, read-only and from bank senders only. Bank app alerts can be read from your notifications.</p></div>
+  </div>
+  <p style="margin-top:22px"><strong>Pull down to refresh</strong> on any main screen to run these checks straight away. PesaSmart never sends messages, never moves money and never contacts your bank.</p>
+</div></section>
+
+<section class="band" id="features"><div class="wrap">
+  <h2>Everything in one place</h2>
+  <div class="grid">
+    <div class="card"><h3>Categories, splits and notes</h3><p class="muted">Split one payment into parts, add a short note, and teach PesaSmart once: it remembers how to file the same person next time.</p></div>
+    <div class="card"><h3>Loans</h3><p class="muted">Money you borrowed from people and lenders, with repayments matched and a running balance. Fuliza, M-Shwari and lender loans included. Tracking money you lent is coming.</p></div>
+    <div class="card"><h3>Events</h3><p class="muted">Tag a birthday, wedding or trip and see what it really cost: spent, gifts received and net cost, with borrowed money shown separately.</p></div>
+    <div class="card"><h3>Budgets and bills</h3><p class="muted">Spending limits, bills and savings goals for the month, with what's left to spend on the dashboard.</p></div>
+    <div class="card"><h3>Investments</h3><p class="muted">Ziidi savings and shares, with profit counted at average cost, so selling shares isn't mistaken for income.</p></div>
+    <div class="card"><h3>Reports and exports</h3><p class="muted">Monthly statements and reports by category, person or account, exported as PDF, Excel or CSV.</p></div>
+    <div class="card"><h3>Your look</h3><p class="muted">Six themes, each in light and dark, or matching your phone.</p></div>
+    <div class="card"><h3>Backup you control <span class="tag">Coming</span></h3><p class="muted">Save one backup file wherever you choose and restore it on a new phone.</p></div>
+  </div>
+</div></section>
+
+<section class="band" style="background:var(--elev)"><div class="wrap">
+  <h2>Private by design</h2>
+  <ul class="bg-list">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="2"/></svg><span><strong>Stays on your phone.</strong> PesaSmart has no server holding your transactions. No account to create.</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span><strong>Money messages only.</strong> PesaSmart uses messages from M-PESA, banks and other money services. Other messages are skipped and never stored.</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M9 5h10v10"/></svg><span><strong>No ads, no selling.</strong> Your data is never sold, shared for advertising or used to train AI.</span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg><span><strong>Delete anytime.</strong> Settings › Delete all data, or uninstall, removes everything.</span></li>
+  </ul>
+  <p style="margin-top:18px"><a href="privacy.html">Read the full privacy policy</a></p>
+</div></section>
+
+<section class="band" id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Does PesaSmart move money or need my PIN?</summary><p>No. It only reads messages. It cannot send money, pay bills or see your PIN, and it never asks for bank passwords.</p></details>
+  <details><summary>Do I need internet?</summary><p>No. Reading SMS, sorting and every screen work offline. Internet is only used for optional features such as Gmail bank emails and saving a backup to a cloud drive you choose.</p></details>
+  <details><summary>Which banks and services does it understand?</summary><p>M-PESA (including Fuliza and M-Shwari), Ziidi, and messages from banks, saccos and lenders such as KCB, Equity, Stanbic, Family Bank, Choice, Stima Sacco and others. New formats are added regularly.</p></details>
+  <details><summary>What if it files something wrongly?</summary><p>Tap the payment and change it. You can ask PesaSmart to remember your choice for that person or business.</p></details>
+  <details><summary>Why does it ask for SMS permission?</summary><p>Reading your money messages is how PesaSmart builds your records. Without it, you can still import statements by hand.</p></details>
+</div></section>
+
+<section class="band terra" id="get"><div class="wrap">
+  <h2>Get PesaSmart</h2>
+  <p>PesaSmart is for Android. It is in private testing now and will be on Google Play soon.</p>
+  <p>Questions or want early access? Email <a href="mailto:eugenemogoi@gmail.com" style="color:#fff">eugenemogoi@gmail.com</a>.</p>
+</div></section>
+</main>
+
+<footer class="band"><div class="wrap">
+  <div><strong>PesaSmart</strong><br><span class="muted">Made in Kenya.</span></div>
+  <div><a href="privacy.html">Privacy policy</a><br><span class="muted">Support: <a href="mailto:eugenemogoi@gmail.com">eugenemogoi@gmail.com</a></span></div>
+  <div class="muted">© 2026 Eugene Mogoi</div>
+</div></footer>
+</body>
+</html>
